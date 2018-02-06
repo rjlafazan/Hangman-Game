@@ -50,21 +50,18 @@ function Letter(letter) {
 			}
 		}
 	
-		guesses++;
-		document.getElementById("guesses").innerHTML = " " +guesses;
-		document.getElementById("answer").innerHTML = answerArray.join(" ");
+		// if (letter.indexOf(event.key) !==  ) {
+			guesses++;
+			document.getElementById("guesses").innerHTML = " " +guesses;
+			document.getElementById("answer").innerHTML = answerArray.join(" ");
+		// }
 	}
+
 	if (guesses > 7) {
 		losses++;
 		document.getElementById("losses").innerHTML = losses;
 		alert("YOU LOSE!");
-	}
-
-	// letter.forEach(val => {
-	// 	console,log(val);
-	// 	usedLetters.push(event.key);
-	// 	document.getElementById('usedLetters').innerHTML = usedLetters;
-	// })
+	} 
 
 }
 
@@ -76,7 +73,7 @@ document.onkeyup = function(event) {
 	if (alphabet.indexOf(event.key) > -1) {
 		usedLetters.push(event.key);
 		console.log(event.key);
-		document.getElementById('usedLetters').innerHTML = usedLetters;
+		document.getElementById('usedLetters').innerHTML = " " + usedLetters;
 	}
 }
 
