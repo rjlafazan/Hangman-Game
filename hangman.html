@@ -3,13 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
+<!-- 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+ -->	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<!-- 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+ -->
 	<title>Hangman!</title>
 </head>
-<body onload="begin()">
+<body>
 	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
 	  <a class="navbar-brand" href="index.html">Ryan's Game Gallery</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -34,18 +34,32 @@
 	  <div class="container text-center">
 	    <h1>Hangman</h1>
 	    <h5>Types of Martial Arts:</h5>
-	    <input id="letter" type="text">  
-	    <input type="button" value="letter" onclick="Letter()">    
 	    <p id="answer"></p>
-	    <p id="guesses"></p>
-	    <p id="losses"></p>
-	    <p id="stat"></p>
-	    <p id="letter"></p>
+	    <button id="startbutt">START</button>
+
+	  </div>
+	</div>
+	<div class="jumbotron">
+	  <div class="container text-center">
+	    <p>Guesses:<a id="guesses"></a></p>
+	    <p>Wins:<a id="wins"></a></p>
+	    <p>Losses:<a id="losses"></a></p>
+	    <p><a id="stat"></a></p>
+	    <p><a id="letter"></a></p>
+	    <p>Letters Used:<br><a id="usedLetters"></a></p>
 
 	  </div>
 	</div>
 
-	<script type="text/javascript" src="hangman.js"></script>
+	<div class="jumbotron">
+	  <div class="container text-center">
+
+	   
+
+	  </div>
+	</div>
+
+	<script type="text/javascript" src="assets/javascript/hangman.js"></script>
 
 	
 </body>

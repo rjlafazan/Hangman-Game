@@ -1,3 +1,5 @@
+
+
 var wordArray = [
 	"muaythai", 
 	"judo", 
@@ -9,7 +11,6 @@ var wordArray = [
 	"jeetkunedo"
 ];
 
-// var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
 var wordRandom = wordArray[Math.floor(Math.random() * wordArray.length)];
 
@@ -23,6 +24,7 @@ var usedLetters = [];
 
 var answerArray = [];
 
+ // begins function and generates random word with underscores 
 function begin() {
 	for (var i = 0; i < wordRandom.length; i++) {
 		answerArray[i] = "_";
@@ -31,38 +33,13 @@ function begin() {
 	varvarBinks = answerArray.join(" ");
 	document.getElementById("answer").innerHTML = varvarBinks
 
-	// document.onkeyup = function(event) {
-	// 	var userGuess = event.key;
-	// 	var letter = document.getElementById("letter").value;
-	// 	document.querySelector("letter").innerHTML = usedLetters;
 
-	// 	if (userGuess === wordRandom.charAt()) {
-
-	// 	} else if (userGuess !== wordRandom.charAt()) {
-			
-	// 	}
-
-	// 	if (letter.length > 0) {
-	// 		for (var i = 0; i < wordRandom.length; i++) {
-	// 			if (wordRandom[i] === letter) {
-	// 				answerArray[i] = letter;
-	// 			}
-	// 		}
-		
-	// 	guesses++;
-	// 	document.getElementById("guesses").innerHTML = "Guess # " + guesses;
-	// 	document.getElementById("answer").innerHTML = answerArray.join(" ");
-	// 	}
-	// 	if (guesses > 7) {
-	// 		losses++;
-	// 		document.getElementById("losses").innerHTML = "Loss # " + losses;
-	// 		alert("YOU LOSE!");
-	// 	}
-	// }
 }
 
-function Letter() {
-	var letter = document.getElementById("letter").value;
+// function for making guesses and placing correct/incorrect letters into the html
+function Letter(letter) {
+	// var letter = document.getElementById("letter").value;
+
 
 	if (letter.length > 0) {
 		for (var i = 0; i < wordRandom.length; i++) {
@@ -71,17 +48,31 @@ function Letter() {
 			}
 		}
 	
-	guesses++;
-	document.getElementById("guesses").innerHTML = "Guess # " + guesses;
-	document.getElementById("answer").innerHTML = answerArray.join(" ");
+		guesses++;
+		document.getElementById("guesses").innerHTML = " " +guesses;
+		document.getElementById("answer").innerHTML = answerArray.join(" ");
 	}
 	if (guesses > 7) {
 		losses++;
-		document.getElementById("losses").innerHTML = "Loss # " + losses;
+		document.getElementById("losses").innerHTML = losses;
 		alert("YOU LOSE!");
 	}
+
+	letter.forEach(val => {
+		console,log(val);
+		usedLetters.push(event.key);
+		document.getElementById('usedLetters').innerHTML = usedLetters;
+	})
+
 }
 
+	
+document.onkeyup = function(event) {
+	console.log(event.key);
+	Letter(event.key);
+}
+
+document.querySelector('#startbutt').addEventListener('click', begin) 
 
 
 
