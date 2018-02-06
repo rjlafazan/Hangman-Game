@@ -11,6 +11,8 @@ var wordArray = [
 	"jeetkunedo"
 ];
 
+var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p",
+"q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
 var wordRandom = wordArray[Math.floor(Math.random() * wordArray.length)];
 
@@ -58,11 +60,11 @@ function Letter(letter) {
 		alert("YOU LOSE!");
 	}
 
-	letter.forEach(val => {
-		console,log(val);
-		usedLetters.push(event.key);
-		document.getElementById('usedLetters').innerHTML = usedLetters;
-	})
+	// letter.forEach(val => {
+	// 	console,log(val);
+	// 	usedLetters.push(event.key);
+	// 	document.getElementById('usedLetters').innerHTML = usedLetters;
+	// })
 
 }
 
@@ -70,6 +72,12 @@ function Letter(letter) {
 document.onkeyup = function(event) {
 	console.log(event.key);
 	Letter(event.key);
+
+	if (alphabet.indexOf(event.key) > -1) {
+		usedLetters.push(event.key);
+		console.log(event.key);
+		document.getElementById('usedLetters').innerHTML = usedLetters;
+	}
 }
 
 document.querySelector('#startbutt').addEventListener('click', begin) 
