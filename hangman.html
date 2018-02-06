@@ -9,7 +9,7 @@
 
 	<title>Hangman!</title>
 </head>
-<body>
+<body onload="begin()">
 	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
 	  <a class="navbar-brand" href="index.html">Ryan's Game Gallery</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -17,10 +17,10 @@
 	  </button>
 	  <div class="collapse navbar-collapse" id="collapsibleNavbar">
 	    <ul class="navbar-nav">
-	      <li class="nav-item active">
+	      <li class="nav-item">
 	        <a class="nav-link" href="index.html">About</a>
 	      </li>
-	      <li class="nav-item">
+	      <li class="nav-item active">
 	        <a class="nav-link" href="hangman.html">Hangman</a>
 	      </li>
 	      <li class="nav-item">
@@ -30,6 +30,22 @@
 	  </div>  
 	</nav>
 
+	<div class="jumbotron">
+	  <div class="container text-center">
+	    <h1>Hangman</h1>
+	    <h5>Types of Martial Arts:</h5>
+	    <input id="letter" type="text">  
+	    <input type="button" value="letter" onclick="Letter()">    
+	    <p id="answer"></p>
+	    <p id="guesses"></p>
+	    <p id="losses"></p>
+	    <p id="stat"></p>
+	    <p id="letter"></p>
+
+	  </div>
+	</div>
+
+	<script type="text/javascript" src="hangman.js"></script>
 
 	
 </body>
