@@ -65,7 +65,7 @@ function Letter(letter) {
 
 }
 
-	
+// logs keyup event to console and runs keyup through Letter function
 document.onkeyup = function(event) {
 	console.log(event.key);
 	Letter(event.key);
@@ -78,6 +78,9 @@ document.onkeyup = function(event) {
 }
 
 document.querySelector('#startbutt').addEventListener('click', begin) 
+
+
+
 
 
 
